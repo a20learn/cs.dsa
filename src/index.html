@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Data Structures & Algorithms — a20learn</title>
+  <!-- Points up one directory level to your shared core assets -->
+  <link rel="stylesheet" href="assets/style.css">
+  <style>
+    /* Specific internal adjustments for reading a textbook syllabus */
+    .phase-title {
+      font-family: monospace;
+      font-size: 14px;
+      letter-spacing: 1px;
+      margin-top: 40px;
+      opacity: 0.7;
+      text-transform: uppercase;
+    }
+
+    .syllabus-section h3 {
+      margin-top: 5px;
+      font-size: 22px;
+      border-bottom: 1px solid var(--greyish);
+      padding-bottom: 5px;
+    }
+
+    .chapter-list {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .chapter-list li {
+      margin-bottom: 15px;
+      line-height: 1.4;
+    }
+
+    .chapter-num {
+      font-family: monospace;
+      margin-right: 10px;
+      opacity: 0.6;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <button class="theme-toggle" id="themeToggle">use dark theme</button>
+    <nav style="font-size: 14px; margin-bottom: 30px;">
+      <a href="http://a20learn.com">index</a> &rarr; <span>dsa.cs</span>
+    </nav>
+    <h1>The CS DSA Handbook & Guide</h1>
+    <p>A zero-fluff, linear progression through data structures, memory layouts, and algorithmic paradigms.</p>
+  </header>
+
+  <main>
+    <div id="syllabus">
+
+      <!-- Chapter 01 -->
+      <section class="syllabus-section">
+        <div class="phase-title">Chapter 01</div>
+        <h3>Foundations & The Hardware Reality</h3>
+        <ul class="chapter-list">
+          <li>
+            <span class="chapter-num">01.1</span>
+            <strong><a href="book.html?ch=01-big-o">Computational Complexity</a></strong> — Demystifying Time and Space
+            Big O notation through code loops.
+          </li>
+          <li>
+            <span class="chapter-num">01.2</span>
+            <strong><a href="book.html?ch=01-memory">Memory Layouts</a></strong> — How data actually sits in the Stack
+            vs Heap allocations, and the role of pointers.
+          </li>
+        </ul>
+      </section>
+
+      <!-- Chapter 02 -->
+      <section class="syllabus-section">
+        <div class="phase-title">Chapter 02</div>
+        <h3>Linear Data Structures</h3>
+        <ul class="chapter-list">
+          <li>
+            <span class="chapter-num">02.1</span>
+            <strong><a href="book.html?ch=02-arrays">Static & Dynamic Arrays</a></strong> — Contiguous block
+            allocations, random access mechanics, and capacity scaling.
+          </li>
+          <li>
+            <span class="chapter-num">02.2</span>
+            <strong><a href="book.html?ch=02-linked-lists">Singly & Doubly Linked Lists</a></strong> — Scattered heap
+            nodes linked by memory references.
+          </li>
+          <li>
+            <span class="chapter-num">02.3</span>
+            <strong><a href="book.html?ch=02-stacks-queues">Stacks & Queues</a></strong> — LIFO and FIFO execution
+            profiles built over arrays and linked lists.
+          </li>
+        </ul>
+      </section>
+
+      <!-- Chapter 03 -->
+      <section class="syllabus-section">
+        <div class="phase-title">Chapter 03</div>
+        <h3>Non-Linear Structures</h3>
+        <ul class="chapter-list">
+          <li>
+            <span class="chapter-num">03.1</span>
+            <strong><a href="book.html?ch=03-binary-trees">Binary Trees & BSTs</a></strong> — Hierarchical parent-child
+            links, searching properties, and traversal strategies.
+          </li>
+          <li>
+            <span class="chapter-num">03.2</span>
+            <strong><a href="book.html?ch=03-heaps">Heaps & Priority Queues</a></strong> — Array-represented complete
+            binary trees optimized for min/max tracking.
+          </li>
+          <li>
+            <span class="chapter-num">03.3</span>
+            <strong><a href="book.html?ch=03-hashing">Hash Maps & Hashing</a></strong> — Fast lookup keys, hash
+            functions, and bucket collision strategies.
+          </li>
+        </ul>
+      </section>
+
+      <!-- Chapter 04 -->
+      <section class="syllabus-section">
+        <div class="phase-title">Chapter 04</div>
+        <h3>Algorithmic Paradigms</h3>
+        <ul class="chapter-list">
+          <li>
+            <span class="chapter-num">04.1</span>
+            <strong><a href="book.html?ch=04-sorting">Sorting & Searching</a></strong> — Breaking down QuickSort,
+            MergeSort, and binary search logic.
+          </li>
+          <li>
+            <span class="chapter-num">04.2</span>
+            <strong><a href="book.html?ch=04-recursion">Recursion & Backtracking</a></strong> — Handling call stack
+            frames, base states, and depth-first decision spaces.
+          </li>
+        </ul>
+      </section>
+
+      <!-- Chapter 05 -->
+      <section class="syllabus-section">
+        <div class="phase-title">Chapter 05</div>
+        <h3>Advanced Optimization</h3>
+        <ul class="chapter-list">
+          <li>
+            <span class="chapter-num">05.1</span>
+            <strong><a href="book.html?ch=05-graphs">Graph Algorithms</a></strong> — Adjacency lists vs matrices, BFS,
+            DFS, and shortest-path trees.
+          </li>
+          <li>
+            <span class="chapter-num">05.2</span>
+            <strong><a href="book.html?ch=05-dynamic-programming">Dynamic Programming</a></strong> — Overcoming
+            recursive overlaps via memoization and tabular state layouts.
+          </li>
+        </ul>
+      </section>
+
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 a20learn. No rights reserved. Copy and distribute.</p>
+  </footer>
+
+  <!-- Points up one directory level to reuse your global script logic -->
+  <script src="assets/main.js"></script>
+</body>
+
+</html>

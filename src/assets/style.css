@@ -1,0 +1,104 @@
+/* Two-tone color system: Whitish and Greyish */
+:root {
+  --whitish: #fafafa;
+  --greyish: #555555;
+}
+
+[data-theme="dark"] {
+  --whitish: #222222;
+  --greyish: #cccccc;
+}
+
+body {
+  max-width: 600px;
+  margin: 60px auto;
+  padding: 0 20px;
+  font: 16px/1.45 georgia, serif;
+  color: var(--greyish);
+  background-color: var(--whitish);
+}
+
+h1,
+h2,
+h3 {
+  color: var(--greyish);
+  font-weight: normal;
+  margin-bottom: 0.5em;
+}
+
+h2 {
+  margin-top: 40px;
+  border-bottom: 1px dashed var(--greyish);
+  padding-bottom: 5px;
+  font-size: 20px;
+}
+
+a {
+  color: var(--greyish);
+  text-decoration: underline;
+}
+
+a:hover {
+  color: var(--greyish);
+  opacity: 0.7;
+}
+
+header {
+  margin-bottom: 40px;
+}
+
+.theme-toggle {
+  background: none;
+  border: none;
+  color: var(--greyish);
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 14px;
+  text-decoration: underline;
+  padding: 0;
+  margin-top: 10px;
+}
+
+/* Minimalist Search Styling */
+.search-container {
+  margin-bottom: 20px;
+}
+
+.search-input {
+  width: 100%;
+  padding: 10px 0;
+  font-family: inherit;
+  font-size: 16px;
+  color: var(--greyish);
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid var(--greyish);
+  outline: none;
+}
+
+.search-input::placeholder {
+  color: var(--greyish);
+  opacity: 0.5;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  margin-bottom: 25px;
+}
+
+p {
+  margin: 5px 0 0 0;
+}
+
+footer {
+  margin-top: 100px;
+  font-size: 13px;
+  border-top: 1px dashed var(--greyish);
+  padding-top: 20px;
+  opacity: 0.6;
+}
