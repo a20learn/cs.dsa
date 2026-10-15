@@ -2,11 +2,13 @@
 :root {
   --whitish: #fafafa;
   --greyish: #555555;
+  --container-bg: #f0f0f0;
 }
 
 [data-theme="dark"] {
   --whitish: #222222;
   --greyish: #cccccc;
+  --container-bg: #262626;
 }
 
 body {
@@ -57,6 +59,7 @@ header {
   text-decoration: underline;
   padding: 0;
   margin-top: 10px;
+  /* float: right; */
 }
 
 /* Minimalist Search Styling */
@@ -100,5 +103,66 @@ footer {
   font-size: 13px;
   border-top: 1px dashed var(--greyish);
   padding-top: 20px;
+  opacity: 0.6;
+}
+
+/* ------------------------------------------------------------- */
+/* Chapter Specific Styles (Recycled Across All Subdomain Files) */
+/* ------------------------------------------------------------- */
+
+header nav {
+  font-size: 14px;
+  margin-bottom: 30px;
+  border-bottom: 1px dashed var(--greyish);
+  padding-bottom: 10px;
+}
+
+.phase-indicator {
+  font-family: monospace;
+  font-size: 12px;
+  opacity: 0.6;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}
+
+pre {
+  background-color: var(--container-bg);
+  padding: 15px;
+  overflow-x: auto;
+  font-family: monospace;
+  font-size: 14px;
+  border-left: 2px solid var(--greyish);
+  margin: 20px 0;
+}
+
+code {
+  font-family: monospace;
+  background-color: var(--container-bg);
+  padding: 2px 4px;
+  font-size: 14px;
+}
+
+.chapter-nav {
+  margin-top: 60px;
+  padding-top: 20px;
+  border-top: 1px dashed var(--greyish);
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Specific internal adjustments for reading a textbook syllabus index */
+.chapter-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.chapter-list li {
+  margin-bottom: 15px;
+  line-height: 1.4;
+}
+
+.chapter-num {
+  font-family: monospace;
+  margin-right: 10px;
   opacity: 0.6;
 }

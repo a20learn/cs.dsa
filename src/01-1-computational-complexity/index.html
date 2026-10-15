@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Computational Complexity — a20learn</title>
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+
+<body>
+
+  <header>
+    <button class="theme-toggle" id="themeToggle">use dark theme</button>
+    <nav>
+      <a href="http://a20learn.com">index</a> &rarr;
+      <a href="index.html">dsa.cs</a> &rarr;
+      <span>01.1 computational complexity</span>
+    </nav>
+    <div class="phase-indicator">Chapter 01 // Foundations & The Hardware Reality</div>
+    <h1>Computational Complexity</h1>
+  </header>
+
+  <main>
+    <h2>The Purpose of Big O</h2>
+    <p>Big O notation is a theoretical framework used to estimate the efficiency of an algorithm as the input size (n)
+      grows toward infinity. It abstracts away hardware variations, processor speeds, and compiler optimizations,
+      focusing purely on the mathematical scaling profile of the execution logic.</p>
+
+    <h2>Core Scaling Tiers</h2>
+    <p>Algorithms are classified based on their asymptotic growth curves. Below are the primary complexity models
+      arranged from most efficient to least efficient:</p>
+
+    <ul>
+      <li><strong>O(1) — Constant Time:</strong> Accessing a value inside an array by index.</li>
+      <li><strong>O(log n) — Logarithmic Time:</strong> Binary Search inside a sorted array.</li>
+      <li><strong>O(n) — Linear Time:</strong> Shifting through an unsorted array sequentially.</li>
+      <li><strong>O(n log n) — Linearithmic Time:</strong> QuickSort and MergeSort.</li>
+      <li><strong>O(n²) — Quadratic Time:</strong> Bubble Sort or raw matrix comparisons.</li>
+    </ul>
+
+    <h2>Analyzing Code Loops</h2>
+    <p>To calculate time bounds, count how the processing iteration frequency changes relative to the variable
+      <code>n</code>:
+    </p>
+
+    <pre><code>// Linear Growth Profile: O(n)
+func LinearCheck(n int) {
+    for i := 0; i < n; i++ {
+        println(i)
+    }
+}</code></pre>
+  </main>
+
+  <nav class="chapter-nav">
+    <a href="/" id="prevLink">&larr; Table of Contents</a>
+    <a href="#" id="nextLink">01.2 Memory Layouts &rarr;</a>
+  </nav>
+
+  <footer>
+    <p>&copy; 2026 a20learn. No rights reserved. Copy and distribute.</p>
+  </footer>
+
+  <script src="../assets/main.js"></script>
+  <script>
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight') window.location.href = "01-memory.html";
+      if (e.key === 'ArrowLeft') window.location.href = "index.html";
+    });
+  </script>
+</body>
+
+</html>
