@@ -58,8 +58,8 @@ header {
   font-size: 14px;
   text-decoration: underline;
   padding: 0;
-  margin-top: 10px;
-  /* float: right; */
+  margin-top: 3px;
+  float: right;
 }
 
 /* Minimalist Search Styling */
