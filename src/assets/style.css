@@ -166,3 +166,78 @@ code {
   margin-right: 10px;
   opacity: 0.6;
 }
+
+/* ------------------------------------------------------------- */
+/* Multi-Language Code Tabs (CSS-Only Radio Toggle Engine)        */
+/* ------------------------------------------------------------- */
+
+/* Hide the native radio input bubbles entirely */
+.code-tabs input[type="radio"] {
+  display: none;
+}
+
+/* Linear tab selector header bar */
+.tab-labels {
+  margin-top: 20px;
+  border-bottom: 1px solid var(--greyish);
+  padding-bottom: 5px;
+}
+
+.tab-labels label {
+  margin-right: 15px;
+  cursor: pointer;
+  font-family: monospace;
+  font-size: 14px;
+  opacity: 0.5;
+}
+
+/* Hover feedback state */
+.tab-labels label:hover {
+  opacity: 0.8;
+}
+
+/* Active Selection Highlight Engine for Stack Controls */
+#stack-go:checked~.tab-labels label[for="stack-go"],
+#stack-c:checked~.tab-labels label[for="stack-c"],
+#stack-java:checked~.tab-labels label[for="stack-java"],
+#stack-py:checked~.tab-labels label[for="stack-py"],
+/* Active Selection Highlight Engine for Queue Controls */
+#queue-go:checked~.tab-labels label[for="queue-go"],
+#queue-c:checked~.tab-labels label[for="queue-c"],
+#queue-java:checked~.tab-labels label[for="queue-java"],
+#queue-py:checked~.tab-labels label[for="queue-py"],
+/* Active Selection Highlight Engine for Generic Code Tabs */
+#lang-go:checked~.tab-labels label[for="lang-go"],
+#lang-c:checked~.tab-labels label[for="lang-c"],
+#lang-java:checked~.tab-labels label[for="lang-java"],
+#lang-py:checked~.tab-labels label[for="lang-py"] {
+  opacity: 1;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+/* Hide all code content blocks by default */
+.code-tabs .tab-content {
+  display: none;
+}
+
+/* Content Visibility Engine based on Checked Radio States */
+#stack-go:checked~.content-stack-go,
+#stack-c:checked~.content-stack-c,
+#stack-java:checked~.content-stack-java,
+#stack-py:checked~.content-stack-py,
+#queue-go:checked~.content-queue-go,
+#queue-c:checked~.content-queue-c,
+#queue-java:checked~.content-queue-java,
+#queue-py:checked~.content-queue-py,
+#lang-go:checked~.content-go,
+#lang-c:checked~.content-c,
+#lang-java:checked~.content-java,
+#lang-py:checked~.content-py {
+  display: block;
+}
+
+/* Clean up margin spacing so pre boxes sit flush against the tab header bar */
+.code-tabs pre {
+  margin-top: 10px;
+}

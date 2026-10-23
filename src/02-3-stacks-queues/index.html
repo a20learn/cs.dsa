@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stacks & Queues — a20learn</title>
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+
+<body>
+
+  <header>
+    <button class="theme-toggle" id="themeToggle">use dark theme</button>
+    <nav>
+      <a href="http://a20learn.com">index</a> &rarr;
+      <a href="index.html">dsa.cs</a> &rarr;
+      <span>02.3 stacks & queues</span>
+    </nav>
+    <div class="phase-indicator">Chapter 02 // Linear Data Structures</div>
+    <h1>Stacks & Queues</h1>
+  </header>
+
+  <main>
+    <h2>1. The Stack (LIFO Mechanics)</h2>
+    <p>A Stack is a sequential data structure that operates strictly on a <strong>Last-In, First-Out</strong> basis.
+      Elements can only be added or removed from the top layer, mirroring how the CPU manages function calls natively
+      inside hardware memory frames.</p>
+
+    <h2>Operational Costs</h2>
+    <ul>
+      <li><strong>Push (Insertion at Top):</strong> O(1) complexity.</li>
+      <li><strong>Pop (Removal from Top):</strong> O(1) complexity.</li>
+      <li><strong>Peek (Look at Top):</strong> O(1) complexity.</li>
+    </ul>
+
+    <h2>Stack Blueprint</h2>
+    <div class="code-tabs">
+      <input type="radio" name="stack-lang-select" id="stack-go" checked>
+      <input type="radio" name="stack-lang-select" id="stack-c">
+      <input type="radio" name="stack-lang-select" id="stack-java">
+      <input type="radio" name="stack-lang-select" id="stack-py">
+
+      <div class="tab-labels">
+        <label for="stack-go">Go</label>
+        <label for="stack-c">C</label>
+        <label for="stack-java">Java</label>
+        <label for="stack-py">Python</label>
+      </div>
+
+      <div class="tab-content content-stack-go">
+        <pre><code>type Stack struct {
+    items []int
+}
+
+func (s *Stack) Push(val int) { s.items = append(s.items, val) }
+func (s *Stack) Pop() int {
+    if len(s.items) == 0 { return -1 }
+    res := s.items[len(s.items)-1]
+    s.items = s.items[:len(s.items)-1]
+    return res
+}</code></pre>
+      </div>
+
+      <div class="tab-content content-stack-c">
+        <pre><code>#define MAX 100
+struct Stack {
+    int top;
+    int items[MAX];
+};
+
+void push(struct Stack* s, int val) {
+    if (s->top < MAX - 1) s->items[++(s->top)] = val;
+}
+int pop(struct Stack* s) {
+    return (s->top == -1) ? -1 : s->items[(s->top)--];
+}</code></pre>
+      </div>
+
+      <div class="tab-content content-stack-java">
+        <pre><code>import java.util.ArrayList;
+
+class Stack {
+    private ArrayList&lt;Integer&gt; items = new ArrayList&lt;&gt;();
+
+    public void push(int val) { items.add(val); }
+    public int pop() {
+        if (items.isEmpty()) return -1;
+        return items.remove(items.size() - 1);
+    }
+}</code></pre>
+      </div>
+
+      <div class="tab-content content-stack-py">
+        <pre><code>class Stack:
+    def __init__(self):
+        self.items = []
+
+    def push(self, val):
+        self.items.append(val)
+
+    def pop(self):
+        return self.items.pop() if self.items else -1</code></pre>
+      </div>
+    </div>
+
+    <h2>2. The Queue (FIFO Mechanics)</h2>
+    <p>A Queue is a linear data structure that processes elements sequentially on a <strong>First-In, First-Out</strong>
+      basis. Data enters through the back boundary (Enqueue) and exits exclusively from the front boundary (Dequeue).
+    </p>
+
+    <h2>Operational Costs</h2>
+    <ul>
+      <li><strong>Enqueue (Insert at Tail):</strong> O(1) complexity.</li>
+      <li><strong>Dequeue (Remove from Head):</strong> O(1) complexity.</li>
+      <li><strong>Front (Look at Head):</strong> O(1) complexity.</li>
+    </ul>
+
+    <h2>Queue Blueprint</h2>
+    <div class="code-tabs">
+      <input type="radio" name="queue-lang-select" id="queue-go" checked>
+      <input type="radio" name="queue-lang-select" id="queue-c">
+      <input type="radio" name="queue-lang-select" id="queue-java">
+      <input type="radio" name="queue-lang-select" id="queue-py">
+
+      <div class="tab-labels">
+        <label for="queue-go">Go</label>
+        <label for="queue-c">C</label>
+        <label for="queue-java">Java</label>
+        <label for="queue-py">Python</label>
+      </div>
+
+      <div class="tab-content content-queue-go">
+        <pre><code>type Queue struct {
+    items []int
+}
+
+func (q *Queue) Enqueue(val int) { q.items = append(q.items, val) }
+func (q *Queue) Dequeue() int {
+    if len(q.items) == 0 { return -1 }
+    res := q.items[0]
+    q.items = q.items[1:]
+    return res
+}</code></pre>
+      </div>
+
+      <div class="tab-content content-queue-c">
+        <pre><code>#define MAX 100
+struct Queue {
+    int front, rear;
+    int items[MAX];
+};
+
+void enqueue(struct Queue* q, int val) {
+    if (q->rear < MAX - 1) q->items[++(q->rear)] = val;
+}
+int dequeue(struct Queue* q) {
+    if (q->front > q->rear) return -1;
+    return q->items[(q->front)++];
+}</code></pre>
+      </div>
+
+      <div class="tab-content content-queue-java">
+        <pre><code>import java.util.LinkedList;
+
+class Queue {
+    private LinkedList&lt;Integer&gt; items = new LinkedList&lt;&gt;();
+
+    public void enqueue(int val) { items.addLast(val); }
+    public int dequeue() {
+        return items.isEmpty() ? -1 : items.removeFirst();
+    }
+}</code></pre>
+      </div>
+
+      <div class="tab-content content-queue-py">
+        <pre><code>from collections import deque
+
+class Queue:
+    def __init__(self):
+        self.items = deque()
+
+    def enqueue(self, val):
+        self.items.append(val)
+
+    def dequeue(self):
+        return self.items.popleft() if self.items else -1</code></pre>
+      </div>
+    </div>
+  </main>
+
+  <nav class="chapter-nav">
+    <a href="02-linked-lists.html" id="prevLink">&larr; 02.2 Linked Lists</a>
+    <a href="index.html" id="tocLink">Table of Contents</a>
+    <a href="03-binary-trees.html" id="nextLink">03.1 Binary Trees &rarr;</a>
+  </nav>
+
+  <footer>
+    <p>&copy; 2026 a20learn. No rights reserved. Copy and distribute.</p>
+  </footer>
+
+  <script src="../assets/main.js"></script>
+  <script>
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight') window.location.href = "03-binary-trees.html";
+      if (e.key === 'ArrowLeft') window.location.href = "02-linked-lists.html";
+    });
+  </script>
+</body>
+
+</html>
